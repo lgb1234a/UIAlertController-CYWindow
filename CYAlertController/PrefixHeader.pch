@@ -1,0 +1,12 @@
+//
+//  PrefixHeader.pch
+//  CYAlertController
+//
+//  Created by chenyn on 17/1/23.
+//  Copyright © 2017年 chenyn. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#endif /* PrefixHeader_pch */

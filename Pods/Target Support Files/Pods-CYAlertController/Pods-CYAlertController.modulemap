@@ -1,0 +1,6 @@
+framework module Pods_CYAlertController {
+  umbrella header "Pods-CYAlertController-umbrella.h"
+
+  export *
+  module * { export * }
+}
