@@ -9,7 +9,7 @@
 #import "ViewController.h"
 #import "UIAlertController+CYWindow.h"
 
-@interface ViewController () <CYAlertControllerDelegate>
+@interface ViewController () <CYAlertControllerDelegate, UIAlertViewDelegate>
 
 @end
 
@@ -18,6 +18,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+//    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Alert" message:@"Test" delegate:self cancelButtonTitle:@"cancel" otherButtonTitles:nil, nil];
+//    
+//    [alertView show];
+//    
+//    
+//    UIView *view1 = [[UIView alloc] initWithFrame:CGRectMake(100, 100, 200, 200)];
+//    
+//    view1.backgroundColor = [UIColor grayColor];
+//    
+//    [self.view addSubview:view1];
     
     UIAlertController *alertC = [UIAlertController alertControllerWithTitle:@"Alert" message:@"Test" preferredStyle:UIAlertControllerStyleAlert];
     alertC.delegate = self;
