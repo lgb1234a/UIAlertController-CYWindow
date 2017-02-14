@@ -43,7 +43,13 @@
     
     [alertC addAction:submitAction];
     
-    NSInteger btnIndex = [alertC addButtonWithTitle:@"随便加一个"];
+    NSInteger btnIndex = [alertC cy_addButtonWithTitle:@"随便加一个" handler:^(UIAlertAction * _Nonnull action) {
+        NSLog(@"-------> 随便加一个");
+    }];
+    
+    [alertC cy_addDestructiveButtonWithTitle:@"警告" handler:^(UIAlertAction * _Nonnull action) {
+        NSLog(@"-------> 小心！");
+    }];
     
     alertC.preferredAction = submitAction;
     

@@ -121,6 +121,33 @@
     self.CYAlertWindow = nil;
 }
 
+- (NSUInteger)cy_addButtonWithTitle:(nullable NSString *)title handler:(void (^ __nullable)(UIAlertAction *action))handler
+{
+    UIAlertAction *action = [UIAlertAction actionWithTitle:title style:UIAlertActionStyleDefault handler:handler];
+    
+    [self addAction:action];
+    
+    return self.actions.count - 1;
+}
+
+- (NSUInteger)cy_addCancelButtonWithTitle:(nullable NSString *)title handler:(void (^ __nullable)(UIAlertAction *action))handler
+{
+    UIAlertAction *action = [UIAlertAction actionWithTitle:title style:UIAlertActionStyleCancel handler:handler];
+    
+    [self addAction:action];
+    
+    return self.actions.count - 1;
+}
+
+- (NSUInteger)cy_addDestructiveButtonWithTitle:(nullable NSString *)title handler:(void (^ __nullable)(UIAlertAction *action))handler
+{
+    UIAlertAction *action = [UIAlertAction actionWithTitle:title style:UIAlertActionStyleDestructive handler:handler];
+    
+    [self addAction:action];
+    
+    return self.actions.count - 1;
+}
+
 @end
 
 @implementation UIAlertController (CYAlertView)
@@ -227,11 +254,6 @@
 }
 
 @end
-
-
-
-
-
 
 
 

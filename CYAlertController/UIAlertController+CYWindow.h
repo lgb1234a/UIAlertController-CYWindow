@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
 /**
  for iOS 8.0 or later  .
  */
@@ -15,16 +16,21 @@
 
 @optional
 
-- (void)willPresentAlertController:(nonnull UIAlertController *)alertController;  // before animation and showing view
-- (void)didPresentAlertController:(nonnull UIAlertController *)alertController;  // after animation
+- (void)willPresentAlertController:(UIAlertController *)alertController;  // before animation and showing view
+- (void)didPresentAlertController:(UIAlertController *)alertController;  // after animation
 
-- (void)willDismissAlertController:(nonnull UIAlertController *)alertController;
-- (void)didDismissAlertController:(nonnull UIAlertController *)alertController;  // after animation
+- (void)willDismissAlertController:(UIAlertController *)alertController;
+- (void)didDismissAlertController:(UIAlertController *)alertController;  // after animation
 
 @end
 
 @interface UIAlertController (CYWindow)
 
+- (NSUInteger)cy_addButtonWithTitle:(nullable NSString *)title handler:(void (^ __nullable)(UIAlertAction *action))handler;
+
+- (NSUInteger)cy_addCancelButtonWithTitle:(nullable NSString *)title handler:(void (^ __nullable)(UIAlertAction *action))handler;
+
+- (NSUInteger)cy_addDestructiveButtonWithTitle:(nullable NSString *)title handler:(void (^ __nullable)(UIAlertAction *action))handler;
 
 @end
 
@@ -53,4 +59,5 @@
 // The field at index 0 will be the first text field (the single field or the login field), the field at index 1 will be the password field. */
 - (nullable UITextField *)textFieldAtIndex:(NSUInteger)textFieldIndex;
 
+NS_ASSUME_NONNULL_END
 @end
